@@ -1,11 +1,14 @@
 package com.example.jpa.entity;
 
 import java.io.Serializable;
+import java.util.Date;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Id;
 import javax.persistence.Table;
+import javax.persistence.Temporal;
+import javax.persistence.TemporalType;
 
 import lombok.Data;
 
@@ -31,6 +34,10 @@ public class AppJpaEntity implements Serializable {
 	
 	@Column(name = "age")
 	private Integer age;
+	
+	@Column(name = "ADDITION_DATE")
+	@Temporal(TemporalType.TIMESTAMP)
+	private Date additionDate;
 
 	public Integer getUserId() {
 		return userId;
@@ -63,7 +70,17 @@ public class AppJpaEntity implements Serializable {
 	public void setAge(Integer age) {
 		this.age = age;
 	}
+
+	public java.util.Date getAdditionDate() {
+		return additionDate;
+	}
+
+	public void setAdditionDate(java.util.Date additionDate) {
+		this.additionDate = additionDate;
+	}
 	
 	
 
+	
+	
 }
