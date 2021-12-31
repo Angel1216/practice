@@ -22,7 +22,7 @@ public class ApplicationConfig {
 	}
 	
 	@CacheEvict(allEntries = true, value = "randomNumberCache")
-	@Scheduled(cron = "0 */30 * * * *", zone = "America/Mexico_City")
+	@Scheduled(cron = "0 */1 * * * *", zone = "America/Mexico_City")
 	public void evictAllCacheValues() {
 		LocalDateTime localDateTime = LocalDateTime.now();
 		System.out.println("Limpiando Cache randomNumberCache... [" + localDateTime + "]");
